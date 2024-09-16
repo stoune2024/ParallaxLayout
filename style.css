@@ -1,0 +1,135 @@
+/*General setup*/
+* {
+	box-sizing:border-box;
+	font-size:10px;
+	font-family:Arial,Tahoma, sans-serif,serif;
+}
+
+/*Стилизация элементов навигационного меню*/
+nav {
+	background-color:rgb(236, 237, 236);
+	position:fixed;
+	top:0;
+	width:100%;
+	z-index:1;
+	padding-right:70px;
+	padding-left:70px;
+}
+nav ul {
+	list-style:none;
+	padding:0;
+	display:flex;
+	justify-content:space-around;
+	align-items:center;
+	margin-top:40px;
+	margin-bottom:40px;
+}
+nav ul li {
+	margin-left:8px;
+	margin-right:8px;
+	font-size:1.5em;
+}
+/*Делаем лого как фоновое изображение*/
+.first_item {
+	font-weight:bold;
+	font-size:2em;
+	flex:1;
+	background-image:url('assets/logo.svg');
+	background-size:2em, auto, cover;
+	background-repeat:no-repeat;
+	background-position:left;
+	padding-left:2.6em;
+	display:inline;
+	line-height:2em;
+}
+
+/*Настройка параллакса (фона)*/
+main {
+	height:100vh;
+	border:2px solid black;
+	background-color:rgb(236, 237, 236);
+}
+/*Нужно для отсутствия двойного скроллинга*/
+body {
+	margin:0;
+}
+/*Внешний контейнер для параллакс эффекта*/
+.wrapper {
+	height:100vh;
+	overflow-y:auto;
+	overflow-x:hidden;
+	perspective:5px;
+	background-color:rgb(236, 237, 236);
+	/*Делаем отступы по бокам*/
+	padding-left:70px;
+	padding-right:70px;
+}
+/*Внутренний контейнер для параллакса эффекта (здесь происходит вся магия)*/
+.header_1 {
+	position:relative;
+	height:100%;
+	transform-style:preserve-3d;
+	z-index:-1;
+}
+/*Динамический фон*/
+.background_1 {
+	position:absolute;
+	height:100%;
+	width:100%;
+	object-fit:cover;
+	top:120px;
+	transform:translateZ(-5px) scale(2);
+}
+/*Передний план*/
+.foreground_1 {
+	position:absolute;
+	left:0;
+	top:30vh;
+}
+/*Основная надпись*/
+p {
+	color:white;
+	font-size:6em;
+	font-weight:bold;
+	line-height:1.5em;
+	margin-left:1em;
+}
+/*Кнопка под основной надписью*/
+.button {
+	color:black;
+	margin-left:4em;
+	font-size:1.5em;
+	width:15em;
+	background-color:rgb(236, 237, 236);
+	line-height:3em;
+	text-align:center;
+}
+
+.buffer {
+	height:60px;
+	background-color:rgb(236, 237, 236);
+	width:100vw;
+}
+
+.header_2 {
+	position:relative;
+	height:100%;
+	transform-style:preserve-3d;
+	z-index:-1;
+}
+.background_2 {
+	position:absolute;
+	float:left;
+	height:100%;
+	
+	object-fit:cover;
+	transform:translateZ(-5px) scale(2);
+	
+}
+.foreground_2 {
+	width:50%;
+	height:100%;
+	background-color:rgb(236, 237, 236);
+	border:2px solid red;
+	float:right;
+}
