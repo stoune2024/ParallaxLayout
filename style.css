@@ -4,16 +4,24 @@
 	font-size:10px;
 	font-family:Arial,Tahoma, sans-serif,serif;
 }
+html {
+	background-color:rgb(236, 237, 236);
+}
+body {
+	width:90%;
+	margin:0 auto;
+	margin-top:120px;
+}
 
 /*Стилизация элементов навигационного меню*/
 nav {
 	background-color:rgb(236, 237, 236);
 	position:fixed;
 	top:0;
+	left:0;
 	width:100%;
-	z-index:1;
-	padding-right:70px;
-	padding-left:70px;
+	padding-left:5%;
+	padding-right:5%;
 }
 nav ul {
 	list-style:none;
@@ -43,51 +51,8 @@ nav ul li {
 	line-height:2em;
 }
 
-/*Настройка параллакса (фона)*/
-main {
-	height:100vh;
-	border:2px solid black;
-	background-color:rgb(236, 237, 236);
-}
-/*Нужно для отсутствия двойного скроллинга*/
-body {
-	margin:0;
-}
-/*Внешний контейнер для параллакс эффекта*/
-.wrapper {
-	height:100vh;
-	overflow-y:auto;
-	overflow-x:hidden;
-	perspective:5px;
-	background-color:rgb(236, 237, 236);
-	/*Делаем отступы по бокам*/
-	padding-left:70px;
-	padding-right:70px;
-}
-/*Внутренний контейнер для параллакса эффекта (здесь происходит вся магия)*/
-.header_1 {
-	position:relative;
-	height:100%;
-	transform-style:preserve-3d;
-	z-index:-1;
-}
-/*Динамический фон*/
-.background_1 {
-	position:absolute;
-	height:100%;
-	width:100%;
-	object-fit:cover;
-	top:120px;
-	transform:translateZ(-5px) scale(2);
-}
-/*Передний план*/
-.foreground_1 {
-	position:absolute;
-	left:0;
-	top:30vh;
-}
 /*Основная надпись*/
-p {
+.parallax_1 h1 {
 	color:white;
 	font-size:6em;
 	font-weight:bold;
@@ -105,31 +70,182 @@ p {
 	text-align:center;
 }
 
-.buffer {
+/*Настройка параллакса 1*/
+.parallax_1 {
+	background-image:url('assets/first_parallax.jpg');
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:cover;
+	background-attachment:fixed;
+	width:100%;
+	height:100vh;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+}
+/*Затемнение первого параллакса*/
+.tint {
+	background-color: rgba(0,0,0,.3);
+	background-blend-mode: multiply;
+}
+/*Буфферная зона*/
+.buffer_1 {
 	height:60px;
 	background-color:rgb(236, 237, 236);
-	width:100vw;
 }
-
-.header_2 {
-	position:relative;
-	height:100%;
-	transform-style:preserve-3d;
-	z-index:-1;
+/*Стилизация второй страницы*/
+.second_page {
+	display:flex;
+	align-items:center;
+	flex-direction:row;
+	justify-content:center;
 }
-.background_2 {
-	position:absolute;
-	float:left;
-	height:100%;
-	
-	object-fit:cover;
-	transform:translateZ(-5px) scale(2);
-	
+/*Настройка параллакса 2*/
+.parallax_2 {
+	background-image:url('assets/second_parallax.jpeg');
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position:left;
+	background-size:contain;
+	height:100vh;
+	width:100%;
 }
-.foreground_2 {
-	width:50%;
-	height:100%;
+/*Настройка контента справа от второго параллакса*/
+.second_page_box {
+	width:100%;
+	height:100vh;
+	display:flex;
+	flex-direction:column;
+	align-items:left;
+	justify-content:space-around;
+}
+.second_page_box h2 {
+	margin-top:auto;
+	font-size:4em;
+}
+.second_page_box p {
+	font-size:1.5em;
+	line-height:1.75em;
+}
+.button.about {
+	margin-bottom:auto;
+	background-color:rgb(0,0,0);
+	color:white;
+	margin-left:0;
+	margin-top:35px;
+}
+/*Стилизация третьей страницы*/
+.third_page {
+	height:50vh;
 	background-color:rgb(236, 237, 236);
-	border:2px solid red;
-	float:right;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:space-around;
+}
+.third_page h2,
+.fourth_page h2 {
+	font-size:4em;
+	text-align:center;
+}
+.third_page_box {
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+}
+h3 {
+	font-size:2em;
+	color:rgb(160, 117, 36);
+	text-align:center;
+}
+.third_page_box p {
+	font-size:1.5em;
+	text-align:center;
+}
+/*Стилизация четвертой страницы*/
+.fourth_page {
+	background-color:rgb(228, 229, 228);
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:space-between;
+}
+/*Стилизация заголовка*/
+.fourth_page h2 {
+	flex:1;
+}
+/*Стилизация flex-контейнера для изображений*/
+.fourth_page_box {
+	display:flex;
+	align-items:center;
+	justify-content:space-around;
+	width:100%;
+	
+	flex:7;
+}
+/*Стилизация первого изображения*/
+.pic_1{
+	background-image:url('assets/kitchen.jpeg');
+	flex:1;
+	height:100vh;
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;
+	/*Стилизация текста*/
+	color:white;
+	text-align:center;
+	padding-top:25%;
+	font-size:2em;
+	font-weight:bold;
+	
+	
+}
+/*Стилизация второго изображения*/
+.pic_2{
+	background-image:url('assets/bathroom.jpeg');
+	flex:1;
+	height:100vh;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position:center;
+	background-size:contain;
+	/*Стилизация текста*/
+	color:white;
+	text-align:center;
+	padding-top:25%;
+	font-size:2em;
+	font-weight:bold;
+
+}
+/*Стилизация третьего изображения*/
+.pic_3{
+	background-image:url('assets/guestroom.jpg');
+	flex:1;
+	height:100vh;
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:cover;
+	/*Стилизация текста*/
+	color:white;
+	text-align:center;
+	padding-top:25%;
+	font-size:2em;
+	font-weight:bold;
+	
+		
+}
+/*Стилизация кнопки*/
+.button.all_services {
+	background-color:black;
+	color:white;
+	margin-left:0;
+	margin-top:80px;
+	margin-bottom:80px;
+	flex:1;
+}
+/*Стилизация пятой страницы*/
+.fifth_page {
+	width:100%;
+	border:2px solid blue;
+	height:500px;
 }
