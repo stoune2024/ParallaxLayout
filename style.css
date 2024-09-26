@@ -277,7 +277,7 @@ h3 {
 	background-color:rgb(20, 21, 20);
 	display:flex;
 	align-items:center;
-	justify-content:space-between;
+	justify-content:space-around;
 }
 /*Стилизация информации шестой страницы*/
 .sixth_page_info h2 {
@@ -291,4 +291,95 @@ h3 {
 }
 strong {
 	font-size:1em;
+}
+/*Стилизация формы шестой страницы*/
+.sixth_page_form {
+	display:grid;
+	grid-template-columns:1fr 1fr;
+	gap:8px;
+}
+/*Ниже идут объединения ячеек сетки*/
+label[for='address']{
+	grid-column:1/3;
+}
+label[for='subject']{
+	grid-column:1/3;
+	width:100%;
+}
+label[for='body']{
+	grid-column:1/3;
+}
+/*Добавление и стилизация label'a сверху инпутов*/
+input {
+	display:block;
+}
+label {
+	color:white;
+	font-size:1.5em;
+}
+/*Стилизация инпутов шестой страницы*/
+.sixth_page_form input[type='text'], textarea {
+	padding:8px 16px;
+	background-color:rgb(20, 21, 20);
+	border:none;
+	border-bottom:1px solid white;
+	color:white;
+	outline:none;
+}
+input[id='address']{
+	width:100%;
+}
+input[id='subject']{
+	width:100%;
+}
+input[id='body']{
+	width:100%;
+}
+input[type='submit']{
+	width:100%;
+	grid-column:1/3;
+}
+input[type='text'], textarea{
+	font-size:1.5rem;
+}
+/*Стилизация textarea*/
+textarea {
+	display:block;
+	width:100%;
+	resize:none;
+}
+/*Стилизация кнопки 'отправить'*/
+input[type='submit']{
+	font-size:1.5rem;
+	height:3em;
+	color:rgb(20, 21, 20);
+}
+/*Стилизация седьмой страницы*/
+.seventh_page {
+	height:70vh;
+	width:100%;
+	border:1px solid blue;
+	display:flex;
+	flex-direction:column;
+	justify-content:space-around;
+	text-align:center;
+}
+/*Стилизация бокса седьмой страницы(просто картинки)*/
+.seventh_page_box {
+	display:flex;
+	justify-content:space-around;
+}
+/*Ограничение пикселизации изображений вследствие увеличения изображений*/
+.seventh_page_box img {
+	max-height:100%;
+}
+/*Стилизация инфы(включая гиперссылки) седьмой странциы*/
+.seventh_page_info {
+	display:flex;
+	justify-content:space-around;
+	text-align:center;
+}
+/*Стилизация текста седьмой страницы*/
+.seventh_page p {
+	font-size:1.5em;
 }
