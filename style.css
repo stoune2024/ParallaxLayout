@@ -42,6 +42,22 @@ nav ul li {
 	margin-right:8px;
 	font-size:1.5em;
 }
+/*Стилизация гиперссылок*/
+nav .first_item a {
+	text-decoration:none;
+	font-size:2rem;
+	color:black;
+}
+nav ul li a {
+	text-decoration:none;
+	color:black;
+	font-size:1.5rem;
+}
+nav ul li a:hover {
+	text-decoration:none;
+	color:rgb(164, 108, 44);
+	font-size:1.5rem;
+}
 /*Делаем лого как фоновое изображение*/
 .first_item {
 	font-weight:bold;
@@ -371,7 +387,7 @@ input[type='submit']{
 }
 /*Ограничение пикселизации изображений вследствие увеличения изображений*/
 .seventh_page_box img {
-	max-height:100%;
+	max-width:100%;
 }
 /*Стилизация инфы(включая гиперссылки) седьмой странциы*/
 .seventh_page_info {
@@ -383,3 +399,4 @@ input[type='submit']{
 .seventh_page p {
 	font-size:1.5em;
 }
+
